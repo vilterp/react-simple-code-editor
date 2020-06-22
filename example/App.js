@@ -1,7 +1,3 @@
-/* @flow */
-/* global require */
-/* eslint-disable import/no-commonjs */
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Editor from '../src/index';

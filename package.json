@@ -17,11 +17,6 @@
     "gh-pages": "git branch -D gh-pages; git checkout -b gh-pages && rm -rf dist/ && parcel build example/App.js && git add -f dist/ && git commit -nm 'Publish website' && git push -fu origin gh-pages; git checkout @{-1}",
     "release": "release-it"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn lint && yarn flow"
-    }
-  },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
@@ -39,6 +34,7 @@
   "license": "MIT",
   "devDependencies": {
     "@release-it/conventional-changelog": "^1.1.0",
+    "@types/react": "^16.9.38",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-plugin-transform-class-properties": "^6.24.1",
