@@ -23,9 +23,9 @@ type Props = React.ElementType<"div"> & {
   placeholder?: string;
   readOnly?: boolean;
   required?: boolean;
-  onClick?: (e: React.MouseEvent) => void;
-  onFocus?: (e: React.FocusEvent) => void;
-  onBlur?: (e: React.FocusEvent) => void;
+  onClick?: (e: React.MouseEvent<HTMLTextAreaElement>) => void;
+  onFocus?: (e: React.FocusEvent<HTMLTextAreaElement>) => void;
+  onBlur?: (e: React.FocusEvent<HTMLTextAreaElement>) => void;
   onKeyUp?: (e: React.KeyboardEvent<HTMLTextAreaElement>) => void;
   onKeyDown?: (e: React.KeyboardEvent<HTMLTextAreaElement>) => void;
 
