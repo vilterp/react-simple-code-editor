@@ -23,9 +23,9 @@ type Props = React.ElementType<"div"> & {
   placeholder?: string;
   readOnly?: boolean;
   required?: boolean;
-  onClick?: (e: MouseEvent) => void;
-  onFocus?: (e: FocusEvent) => void;
-  onBlur?: (e: FocusEvent) => void;
+  onClick?: (e: React.MouseEvent) => void;
+  onFocus?: (e: React.FocusEvent) => void;
+  onBlur?: (e: React.FocusEvent) => void;
   onKeyUp?: (e: React.KeyboardEvent<HTMLTextAreaElement>) => void;
   onKeyDown?: (e: React.KeyboardEvent<HTMLTextAreaElement>) => void;
 
@@ -254,10 +254,10 @@ export default class Editor extends React.Component<Props, State> {
     }
 
     if (e.keyCode === KEYCODE_ESCAPE) {
-      e.target.blur();
+      e.currentTarget.blur();
     }
 
-    const { value, selectionStart, selectionEnd } = e.target;
+    const { value, selectionStart, selectionEnd } = e.currentTarget;
 
     const tabCharacter = (insertSpaces ? " " : "\t").repeat(tabSize);
 
@@ -591,7 +591,7 @@ export default class Editor extends React.Component<Props, State> {
   }
 }
 
-const styles = {
+const styles: { [key: string]: React.CSSProperties } = {
   container: {
     position: "relative",
     textAlign: "left",
@@ -608,9 +608,6 @@ const styles = {
     resize: "none",
     color: "inherit",
     overflow: "hidden",
-    MozOsxFontSmoothing: "grayscale",
-    WebkitFontSmoothing: "antialiased",
-    WebkitTextFillColor: "transparent",
   },
   highlight: {
     position: "relative",
